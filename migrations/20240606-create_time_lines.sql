@@ -1,4 +1,4 @@
-CREATE TABLE `kabu`.`top_line` (
+CREATE TABLE `kabu`.`top_lines` (
   `opening_date` DATE NOT NULL COMMENT '開場日',
   `symbol_code` VARCHAR(4) NOT NULL COMMENT '銘柄コード',
   `current_datetime` TIMESTAMP NOT NULL COMMENT '現在時刻',
@@ -8,6 +8,12 @@ CREATE TABLE `kabu`.`top_line` (
   `vwap` FLOAT NULL COMMENT '出来高加重平均値',
   `trading_value` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '当日売買代金',
   `recent_value` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '直近売買代金',
+  `large_buy_value` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '大口買代金',
+  `middle_buy_value` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '中口買代金',
+  `small_buy_value` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '小口買代金',
+  `large_sell_value` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '大口売代金',
+  `middle_sell_value` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '中口売代金',
+  `small_sell_value` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '小口売代金',
   `bid_sign` VARCHAR(4) NULL COMMENT '売気配',
   `ask_sign` VARCHAR(4) NULL COMMENT '買気配',
   PRIMARY KEY (`opening_date`, `symbol_code`))
